@@ -1,0 +1,10 @@
+protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlDataAdapter da = new SqlDataAdapter("select * from details", con);
+        DataSet ds = new DataSet();
+
+        da.Fill(ds, "details");
+        GridView1.DataSource = ds;
+        GridView1.DataBind();
+
+    }

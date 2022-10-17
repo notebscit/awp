@@ -1,0 +1,45 @@
+    interface area
+    {
+        void compute(double x);
+
+    }
+
+    class square : area
+    {
+        public void compute(double x)
+        {
+            Console.WriteLine("Area of Square " + (x * x));
+
+        }
+    }
+
+    class circle : area
+    {
+        public void compute(double x)
+        {
+            Console.WriteLine("Area of Circle " + (3.14 * x * x));
+
+        }
+
+        class Program
+        {
+            
+            static void Main(string[] args)
+            {
+                square s = new square();
+                circle c = new circle();
+                area a;
+                a = s as area;
+                a.compute(4);
+
+                a = c as area;
+                a.compute(4);
+                Console.ReadLine();
+
+     
+
+
+            }
+        }
+    }
+}

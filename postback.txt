@@ -1,0 +1,19 @@
+    protected void Page_Load(object sender, EventArgs e)
+    {
+       
+        if (IsPostBack) {
+            string str = "Krishna Chaurasiya";
+            if (ViewState["data"] == null) {
+                ViewState["data"] = str;
+
+            }
+        
+        
+        }
+
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label1.Text = ViewState["data"].ToString();
+    }

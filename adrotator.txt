@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>1.jpg</ImageUrl>
+    <NavigateUrl>https://google.com</NavigateUrl>
+    <Impressions>3</Impressions>
+    <AlternateText>Koala</AlternateText>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>2.jpg</ImageUrl>
+    <NavigateUrl>https://w3schools.com</NavigateUrl>
+    <Impressions>3</Impressions>
+    <AlternateText>Penguins</AlternateText>
+  </Ad>
+</Advertisements>

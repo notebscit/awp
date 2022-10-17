@@ -1,0 +1,24 @@
+protected void Button1_Click(object sender, EventArgs e)
+    {
+        XmlTextWriter wr = new      XmlTextWriter("C:\\Users\\krish\\OneDrive\\Desktop\\AWP\\kk.xml",null);
+        wr.WriteStartDocument();
+        wr.WriteStartElement("Details");
+        wr.WriteElementString("Firstname","Krishna");
+        wr.WriteElementString("Lastname", "Chaurasiya");
+        wr.WriteElementString("Id", "06");
+        wr.WriteEndElement();
+        wr.WriteEndDocument();
+        wr.Close();
+        Label1.Text = "Successfully data Written";
+ }
+ 
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        DataSet ds = new DataSet();
+        string xmlnode = "C:\\Users\\krish\\OneDrive\\Desktop\\AWP\\kk.xml";
+        ds.ReadXml(xmlnode);
+        GridView1.DataSource = ds.Tables[0].DefaultView;
+        GridView1.DataBind();
+
+    }
+}

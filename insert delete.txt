@@ -1,0 +1,42 @@
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string insquery = "insert into student values(@id, @name, @city)";
+        SqlCommand cmd = new SqlCommand(insquery, con);
+        cmd.Parameters.AddWithValue("@id", TextBox1.Text);
+        cmd.Parameters.AddWithValue("@name", TextBox2.Text);
+        cmd.Parameters.AddWithValue("@city", TextBox3.Text);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        Label1.Text = "record inserted successfully";
+ 
+
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        string delquery = "delete from student where id=@id";
+        SqlCommand cmd = new SqlCommand(delquery, con);
+        cmd.Parameters.AddWithValue("@id", TextBox1.Text);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        Label1.Text = "record deleted successfully";
+    }
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        string delquery = "update student SET name=@name where id=@id;";
+        SqlCommand cmd = new SqlCommand(delquery, con);
+        cmd.Parameters.AddWithValue("@id", TextBox1.Text);
+        cmd.Parameters.AddWithValue("@name", TextBox2.Text);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        Label1.Text = "record Updated successfully";
+    }
+
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        SqlDataSource s = new SqlDataSource();
+        s.SelectCommand = "select * from students;";
+        GridView1.DataBind();
+
+    }
+} 

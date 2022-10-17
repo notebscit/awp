@@ -1,0 +1,60 @@
+    class complex {
+
+        int real, img;
+
+
+        public void accept() {
+            Console.WriteLine("Enter Real part");
+            real = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Enter Imaginary part");
+            img = Convert.ToInt16(Console.ReadLine());
+        
+        }
+
+        public void disp() {
+            Console.WriteLine(real + "+" + img + "i");
+        
+        
+        }
+
+        public static complex operator -(complex c1, complex c2) {
+            complex c3 = new complex();
+            c3.real = c1.real - c2.real;
+            c3.img = c1.img - c2.img;
+            return c3;
+        
+        
+        }
+
+    
+    
+    
+    
+    }
+
+    
+    class Class2
+    {
+        public static void Main(string[] args) {
+            complex c1 = new complex();
+            complex c2 = new complex();
+            complex c3 = new complex();
+
+
+
+            c1.accept();
+            c2.accept();
+            c3 = c1 - c2;
+
+            c1.disp();
+            c2.disp();
+            Console.WriteLine("Difference Between tow Complex Numver is :");
+            c3.disp();
+
+            Console.ReadLine();
+        
+        
+        }
+
+    }

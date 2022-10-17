@@ -1,0 +1,9 @@
+string selquery = "select * from student where name='" +TextBox1.Text+ "'; ";
+        SqlCommand cmd = new SqlCommand(selquery, con);
+        con.Open();
+        SqlDataReader dr =cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            TextBox2.Text += dr[0].ToString() + "\t" + dr[1].ToString() + "\t" + dr[2].ToString() + "\n";
+
+        }

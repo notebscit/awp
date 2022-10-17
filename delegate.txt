@@ -1,0 +1,28 @@
+   public delegate void rectangle(int x,int y);
+
+
+    class rect
+    {
+        public void area(int x, int y) {
+            Console.WriteLine("Area of Rectangle is :" + (x * y));
+        
+        }
+
+        public void perimeter(int x, int y)
+        {
+            Console.WriteLine("Area of Rectangle is :" + 2*(x * y));
+
+        }
+
+        public static void Main(string[] args) {
+            rect r = new rect();
+            rectangle obj = r.area;
+            obj += r.perimeter;
+            obj(3, 5);
+            Console.ReadLine();
+        
+        
+        }
+
+
+    }

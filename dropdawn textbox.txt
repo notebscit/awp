@@ -1,0 +1,15 @@
+protected void Button1_Click(object sender, EventArgs e)
+    {
+        string selquery = "select * from student";
+        SqlCommand cmd = new SqlCommand(selquery, con);
+        con.Open();
+        SqlDataReader dr = cmd.ExecuteReader();
+        DropDownList1.DataSource = dr;
+        DropDownList1.DataTextField = "name";
+        DropDownList1.DataBind();
+
+    }
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        TextBox1.Text = DropDownList1.Text;
+    }

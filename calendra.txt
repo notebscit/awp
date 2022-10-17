@@ -1,0 +1,26 @@
+Specific Date
+protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+    {
+  if (e.Day.Date.Day == 18 && e.Day.Date.Month==10) {
+            e.Cell.Controls.Add(new LiteralControl("<br>Holiday"));
+   }
+
+ Range of holiday
+protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+{
+ if (e.Day.Date >= new DateTime(2022, 10, 17) && e.Day.Date <= new DateTime(2022, 10, 25)) 
+{
+            e.Cell.BackColor = System.Drawing.Color.AntiqueWhite;
+        
+        }
+    }  
+
+
+Difference between two calendar
+
+protected void Button1_Click(object sender, EventArgs e)
+    {
+        TimeSpan t = Calendar2.SelectedDate - Calendar3.SelectedDate;
+        Label1.Text="The Difference between tow calender is "+ t.Days.ToString();
+    }
+
